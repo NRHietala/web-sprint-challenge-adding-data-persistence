@@ -8,7 +8,7 @@ const insert = data => {
   return db("tasks")
     .insert(data)
     .then(([id]) => {
-      return db("tasks").where("id", id).first();
+      return db("tasks").where("task_id", id).first();
     });
 };
 

@@ -20,9 +20,10 @@ function validateResourcePost(req, res, next) {
 }
 
 function validateTaskPost(req, res, next) {
-  const { name, budget } = req.body;
+  const { task_description } = req.body;
 
-  if (name && budget) {
+  if (task_description) {
+    req.body.task_completed = false;
     next();
   } else {
     res.status(400).json({ message: "Missing required field" });
