@@ -10,9 +10,9 @@ function validateProjectPost(req, res, next) {
 }
 
 function validateResourcePost(req, res, next) {
-  const { name, budget } = req.body;
+  const { resource_name } = req.body;
 
-  if (name && budget) {
+  if (resource_name) {
     next();
   } else {
     res.status(400).json({ message: "Missing required field" });

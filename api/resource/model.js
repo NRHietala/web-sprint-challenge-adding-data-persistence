@@ -8,7 +8,7 @@ const insert = data => {
   return db("resources")
     .insert(data)
     .then(([id]) => {
-      return db("resources").where("id", id).first();
+      return db("resources").where("resource_id", id).first();
     });
 };
 
