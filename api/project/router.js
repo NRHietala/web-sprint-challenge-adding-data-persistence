@@ -8,7 +8,11 @@ const { validateProjectPost } = require("../middleware/middleware");
 router.get("/", async (req, res, next) => {
   try {
     const data = await Project.getAll();
-    res.json(data);
+    res.json(
+      data.map(project => {
+        return { ...project, project_completed: !!project.project_completed };
+      })
+    );
   } catch (error) {
     next(error);
   }

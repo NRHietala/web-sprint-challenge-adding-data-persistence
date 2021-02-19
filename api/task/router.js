@@ -8,7 +8,11 @@ const { validateTaskPost } = require("../middleware/middleware");
 router.get("/", async (req, res, next) => {
   try {
     const data = await Task.getAll();
-    res.json(data);
+    res.json(
+      data.map(task => {
+        return { ...task, task_completed: !!task.task_completed };
+      })
+    );
   } catch (error) {
     next(error);
   }
