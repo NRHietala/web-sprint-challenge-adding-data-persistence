@@ -26,6 +26,7 @@ module.exports = {
   insert,
 };
 
+// SQL Query
 // select
 // t.task_id, t.task_description,t.task_notes, t.task_completed,p.project_name,p.project_description
 // from tasks t
