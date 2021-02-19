@@ -10,6 +10,7 @@ router.get("/", async (req, res, next) => {
     const data = await Project.getAll();
     res.json(
       data.map(project => {
+        // altering binary boolean to text value
         return { ...project, project_completed: !!project.project_completed };
       })
     );
