@@ -1,5 +1,5 @@
 function validateProjectPost(req, res, next) {
-  const { project_name, project_description } = req.body;
+  const { project_name } = req.body;
 
   if (project_name) {
     req.body.project_completed = false;
