@@ -16,11 +16,7 @@ exports.up = function (knex) {
       table.text("task_description", 128).notNullable().unique();
       table.text("task_notes", 128);
       table.boolean("task_completed").notNullable().defaultTo(0);
-      table
-        .integer("project_id")
-        .references("project_id")
-        .inTable("projects")
-        .unsigned();
+      table.integer("project_id").references("project_id").inTable("projects");
     });
 };
 
