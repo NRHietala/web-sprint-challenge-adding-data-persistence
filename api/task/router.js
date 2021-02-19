@@ -11,6 +11,7 @@ router.get("/", async (req, res, next) => {
     res.json(
       data.map(task => {
         // altering binary boolean to text value
+        console.log(task);
         return { ...task, task_completed: !!task.task_completed };
       })
     );
@@ -22,7 +23,7 @@ router.get("/", async (req, res, next) => {
 router.post("/", validateTaskPost, async (req, res, next) => {
   try {
     const data = await Task.insert(req.body);
-    res.json(data);
+    res.json({ ...data, task_completed: !!data.task_completed });
   } catch (error) {
     next(error);
   }

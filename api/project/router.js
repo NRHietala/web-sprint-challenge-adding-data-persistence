@@ -22,7 +22,7 @@ router.get("/", async (req, res, next) => {
 router.post("/", validateProjectPost, async (req, res, next) => {
   try {
     const data = await Project.insert(req.body);
-    res.json(data);
+    res.json({ ...data, project_completed: !!data.project_completed });
   } catch (error) {
     next(error);
   }
