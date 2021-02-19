@@ -58,20 +58,25 @@ A **resource assignment** connects a resource and a project, and is stored in a 
 Build an API inside the `api` folder with endpoints for:
 
 - [ ] `[POST] /api/resources`
+
   - Example of response body: `{"resource_id":1,"resource_name":"foo","resource_description":null}`
 
 - [ ] `[GET] /api/resources`
+
   - Example of response body: `[{"resource_id":1,"resource_name":"foo","resource_description":null}]`
 
 - [ ] `[POST] /api/projects`
+
   - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
   - Example of response body: `{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}`
 
 - [ ] `[GET] /api/projects`
+
   - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
   - Example of response body: `[{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}]`
 
 - [ ] `[POST] /api/tasks`
+
   - Even though `task_completed` is stored as an integer, the API uses booleans when interacting with the client
   - Example of response body: `{"task_id":1,"task_description":"baz","task_notes":null,"task_completed":false,"project_id:1}`
 
@@ -112,6 +117,17 @@ After finishing your required elements, you can push your work further. These go
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+
+- Relational Databases are a type of database which uses structured tables to hold data related to each other. SQL is shorthand for Structured Query Language which is what we use to "query" the database for the information we seek.
+
 2. Why do tables need a Primary Key?
+
+- Primary keys are the unique identifiers of data which always point back to itself regardless of its location
+
 3. What is the name given to a table column that references the Primary Key on another table?
+
+- Foreign keys are the primary keys of objects from other tables.
+
 4. What do we need in order to have a _many to many_ relationship between two tables?
+
+- Many to many relationships are when multiple data points are associated with multiple records in another table. Solving many to many relationships often take an intermediary table which would convert the many to many relationships to separate one to many relationships.
