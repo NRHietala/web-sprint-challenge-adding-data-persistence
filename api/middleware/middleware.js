@@ -1,7 +1,8 @@
 function validateProjectPost(req, res, next) {
-  const { name, budget } = req.body;
+  const { project_name, project_description } = req.body;
 
-  if (name && budget) {
+  if (project_name) {
+    req.body.project_completed = false;
     next();
   } else {
     res.status(400).json({ message: "Missing required field" });
